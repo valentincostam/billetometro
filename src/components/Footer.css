@@ -1,0 +1,56 @@
+.footer {
+  text-align: center;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  line-height: 1;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__text {
+  padding: 1rem;
+}
+
+.footer__link {
+  color: #0049d1;
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+.footer__heart-icon {
+  --size: 16px;
+  display: inline-block;
+  margin: 0 .3rem;
+  height: var(--size);
+  width: var(--size);
+  fill: #444;
+  vertical-align: middle;
+}
+
+.footer__button {
+  padding: 1rem;
+  background-color: #eee;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.footer__button-icon {
+  --size: 16px;
+  height: var(--size);
+  width: var(--size);
+  display: block;
+  transform: rotate(-90deg);
+  fill: #444;
+}

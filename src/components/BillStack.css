@@ -1,0 +1,171 @@
+.bill-stack {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.bill-stack--empty {
+  margin: 2rem auto;
+  display: block;
+}
+
+.bill-stack__message {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0;
+  margin-bottom: .5rem;
+}
+
+.bill-stack__message--small {
+  font-size: 1rem;
+}
+
+.bill-stack__link {
+  color: #0049d1;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.bill-stack__link:hover {
+  text-decoration: underline;
+}
+
+.prism {
+  --width: 260px;
+  --height: 5px;
+  --depth: 108px;
+  width: var(--width);
+  margin: 4rem auto 8rem;
+  position: absolute;
+  top: 0;
+  transform-style: preserve-3d;
+  transform: translateZ(calc(var(--depth) / -2)) rotateX(-20deg) rotateY(40deg);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: translateZ(calc(var(--depth) / -2)) rotateX(-20deg) rotateY(40deg);
+  }
+  to {
+    transform: translateZ(calc(var(--depth) / -2)) rotateX(-20deg) rotateY(400deg);
+  }
+}
+
+.prism__face {
+  --hue: 40deg;
+  --saturation: 15%;
+  position: absolute;
+}
+
+.prism__face--front,
+.prism__face--back {
+  height: var(--height);
+  width: var(--width);
+  background: repeating-linear-gradient(
+    hsl(var(--hue) var(--saturation) 60%),
+    hsl(var(--hue) var(--saturation) 60%) 1px,
+    hsl(var(--hue) var(--saturation) 45%) 1px,
+    hsl(var(--hue) var(--saturation) 45%) 2px
+  );
+}
+
+.prism__face--right,
+.prism__face--left {
+  height: var(--height);
+  width: var(--depth);
+  left: calc((var(--width) - var(--depth)) / 2);
+  background: repeating-linear-gradient(
+    hsl(var(--hue) var(--saturation) 45%),
+    hsl(var(--hue) var(--saturation) 45%) 1px,
+    hsl(var(--hue) var(--saturation) 35%) 1px,
+    hsl(var(--hue) var(--saturation) 35%) 2px
+  );
+}
+
+.prism__face--top,
+.prism__face--bottom {
+  height: var(--depth);
+  width: var(--width);
+  top: calc((var(--height) - var(--depth)) / 2);
+}
+
+.prism__face--front  {
+  transform: rotateY(  0deg) translateZ(calc(var(--depth) / 2));
+}
+
+.prism__face--back   {
+  transform: rotateY(180deg) translateZ(calc(var(--depth) / 2));
+}
+
+.prism__face--right  {
+  transform: rotateY( 90deg) translateZ(calc(var(--width) / 2));
+}
+
+.prism__face--left   {
+  transform: rotateY(-90deg) translateZ(calc(var(--width) / 2));
+}
+
+.prism__face--top    {
+  transform: rotateX( 90deg) translateZ(calc(var(--height) / 2))
+}
+
+.prism__face--bottom {
+  transform: rotateX(-90deg) translateZ(calc(var(--height) / 2))
+}
+
+.prism--1000 .prism__face--top {
+  background-image: url('/img/1000.jpg');
+}
+
+.prism--500 .prism__face--top {
+  background-image: url('/img/500.jpg');
+}
+
+.prism--200 .prism__face--top {
+  background-image: url('/img/200.jpg');
+}
+
+.prism--100 .prism__face--top {
+  background-image: url('/img/100.jpg');
+}
+
+.prism--50 .prism__face--top {
+  background-image: url('/img/50.jpg');
+}
+
+.prism--20 .prism__face--top {
+  background-image: url('/img/20.jpg');
+}
+
+.prism--10 .prism__face--top {
+  background-image: url('/img/10.jpg');
+}
+
+.prism--1000 .prism__face {
+  --hue: 40deg;
+}
+
+.prism--500 .prism__face {
+  --hue: 50deg;
+}
+
+.prism--200 .prism__face {
+  --hue: 200deg;
+}
+
+.prism--100 .prism__face {
+  --hue: 240deg;
+}
+
+.prism--50 .prism__face {
+  --hue: 60deg;
+}
+
+.prism--20 .prism__face {
+  --hue: 20deg;
+}
+
+.prism--10 .prism__face {
+  --hue: 40deg;
+}

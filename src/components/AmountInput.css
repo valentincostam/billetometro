@@ -1,0 +1,30 @@
+.amount-input {
+  background-color: #fff;
+  padding-top: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.amount-input__inner {
+  display: flex;
+  border: 1px solid #ddd;
+}
+
+.amount-input__label {
+  display: flex;
+  background-color: pink;
+  font-size: 1.2rem;
+  padding: .3rem .8rem;
+  background-color: #eee;
+  font-weight: bold;
+  line-height: 1;
+  align-items: center;
+}
+
+.amount-input__input {
+  width: 100%;
+  font-size: 2em;
+  padding: .3rem .7rem;
+  border: 0;
+}

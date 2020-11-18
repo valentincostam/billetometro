@@ -2,6 +2,8 @@
   "name": "billetometro",
   "version": "0.1.0",
   "private": true,
+  "author": "Valentín Costa <valentincostam@gmail.com> (https://valentincosta.com)",
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

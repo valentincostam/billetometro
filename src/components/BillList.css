@@ -1,0 +1,130 @@
+.bill-list {
+  list-style: none;
+  padding: 0;
+}
+
+.bill-list__item {
+  margin-bottom: .5rem;
+}
+
+.bill-list__label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #eee;
+  border: 1px solid #eee                                                                          ;
+  position: relative;
+  overflow: hidden;
+}
+
+.bill-list__item--disabled .bill-list__label {
+  background-color: #fff;
+}
+
+.bill-list__bill {
+  width: 130px;
+  height: 54px;
+  background-size: cover;
+  flex-shrink: 0;
+}
+
+.bill-list__bill--1000 {
+  background-image: url('/img/1000.jpg');
+}
+
+.bill-list__bill--500 {
+  background-image: url('/img/500.jpg');
+}
+
+.bill-list__bill--200 {
+  background-image: url('/img/200.jpg');
+}
+
+.bill-list__bill--100 {
+  background-image: url('/img/100.jpg');
+}
+
+.bill-list__bill--50 {
+  background-image: url('/img/50.jpg');
+}
+
+.bill-list__bill--20 {
+  background-image: url('/img/20.jpg');
+}
+
+.bill-list__bill--10 {
+  background-image: url('/img/10.jpg');
+}
+
+.bill-list__item--disabled .bill-list__bill {
+  filter: grayscale(1);
+  opacity: .8;
+}
+
+.bill-list__count {
+  font-size: 1.3rem;
+  margin-left: .5rem;
+  line-height: 1;
+  flex-grow: 1;
+}
+
+.bill-list__count--zero,
+.bill-list__item--disabled .bill-list__count {
+  color: #aaa;
+}
+
+.bill-list__checkbox {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+}
+
+@supports(-webkit-appearance: none) {
+    .bill-list__checkbox {
+    -webkit-appearance: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    cursor: pointer;
+  }
+
+  .bill-list__checkbox:focus {
+    outline: 0;
+  }
+
+  .bill-list__checkbox:checked {
+    background: none;
+  }
+
+  .bill-list__checkbox:checked::after {
+    position: absolute;
+    top: 0.36rem; 
+    left: 0.12rem;
+    content: "";
+    width: 1.0rem;
+    height: 0.3rem;
+    border: 4px solid #333;
+    border-right: none;
+    border-top: none;
+    transform: rotate(-45deg);
+  }
+}
+
+@media (min-width: 43rem) {
+  .bill-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem .5rem;
+  }
+
+  .bill-list__item {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 75em) {
+  .bill-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
