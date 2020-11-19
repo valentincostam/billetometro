@@ -5,9 +5,9 @@ import AmountInput from "./components/AmountInput";
 import BillStack from "./components/BillStack";
 import BillList from "./components/BillList";
 import BillStats from "./components/BillStats";
-import Footer from "./components/Footer";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 
+// TODO: Debería mover esta función a otro archivo?
 function getBillCount(amount, denominations) {
   const sortedDenominations = denominations.sort((a, b) => b - a);
   const lowestDenomination = Math.min(...denominations);
@@ -29,12 +29,13 @@ function getBillCount(amount, denominations) {
   return billsCount;
 }
 
+// TODO: Debería mover esta función a otro archivo?
 function updateBillCount(amount, bills) {
   const updatedBills = [...bills];
 
   const checkedDenominations = updatedBills
-    .filter((bill) => bill.checked)
-    .map((bill) => bill.denomination);
+    .filter(({ checked }) => checked)
+    .map(({ denomination }) => denomination);
 
   const billCount = getBillCount(amount, checkedDenominations);
 

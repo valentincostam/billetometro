@@ -10,15 +10,17 @@ Si encontrás algún error en el código, se te ocurre una mejora, o simplemente
 
 ## Tareas
 
-- [ ] Agregar footer.
+- [ ] Evitar el wrap de los números en el conteo de billetes.
+- [ ] Mostrar un mensaje diferente si no hay ningún billete tildado.
+- [ ] Impedir que desaparezca el billete que arriba en la pila cuando el número ingresado es muy grande. Pasa principalmente en celulares.
 - [ ] Ocultar el botón "Scroll to top" y mostrar sólo cuando ya no se ve la lista de billetes.
 - [ ] Formatear los números para que sean más legibles, es decir, mostrar 17.422.095 en lugar de 17422095.
 - [ ] Resolver el problema de la altura del prisma (`div.prism`) y la pila de billetes (`div.bill-stack`).
 - [ ] ~~Calibrar la balanza.~~ Corroborar que cada billete pesa aproximadamente 1 g.
 - [ ] Corroborar que cada billete tiene un grosor aproximado de 0.1 mm.
-- [ ] Soportar monedas de otros países.
+- [ ] Mover `getBillCount()` y `updateBillCount()` a otro archivo?
 - [ ] Mejorar este README.
-- [x] ~~Agregar favicon.~~
+- [ ] Soportar monedas de otros países.
 
 ## Licencia
 

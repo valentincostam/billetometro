@@ -1,8 +1,6 @@
-.bill-stats {
-}
-
 .bill-stats__item {
   background-color: #eee;
+  border: 1px solid #eee;
   padding: 1rem;
   text-align: center;
   display: flex;
@@ -10,10 +8,6 @@
   justify-content: center;
   align-items: center;
   margin-bottom: .5rem;
-}
-
-.bill-stats__label {
-  /* font-weight: bold; */
 }
 
 .bill-stats__value {
