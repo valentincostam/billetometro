@@ -63,10 +63,9 @@ function BillStack({ bills, onLend }) {
 
   let stackHeight = totalBillCount * BILL_THICKNESS;
 
-  // En desktop, evita que desaparezca el billete de arriba de la pila.
-  // TODO: Buscar el número que evita lo mismo en mobile.
-  if (stackHeight > 60000000) {
-    stackHeight = 60000000;
+  // Altura máxima. Evita que desaparezca el billete de arriba de la pila.
+  if (stackHeight > 20000000) {
+    stackHeight = 20000000;
   }
 
   return (
