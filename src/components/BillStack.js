@@ -23,7 +23,7 @@ function BillStack({ bills, onLend }) {
 
   const totalBillCount = bills
     .map(({ count }) => count)
-    .reduce((acc, val) => acc + val);
+    .reduce((total, count) => total + count);
 
   if (totalBillCount === 0) {
     const minCheckedDenomination = bills

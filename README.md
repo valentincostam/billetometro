@@ -10,6 +10,7 @@ Si encontrás algún error en el código, se te ocurre una mejora, o simplemente
 
 ## Tareas
 
+- [ ] Permitir ingresar el número de billetes.
 - [ ] Evitar el wrap de los números en el conteo de billetes.
 - [ ] Mostrar un mensaje diferente si no hay ningún billete tildado.
 - [ ] Impedir que desaparezca el billete que arriba en la pila cuando el número ingresado es muy grande. Pasa principalmente en celulares.

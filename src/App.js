@@ -6,64 +6,22 @@ import BillStack from "./components/BillStack";
 import BillList from "./components/BillList";
 import BillStats from "./components/BillStats";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-
-// TODO: Debería mover esta función a otro archivo?
-function getBillCount(amount, denominations) {
-  const sortedDenominations = denominations.sort((a, b) => b - a);
-  const lowestDenomination = Math.min(...denominations);
-  const billsCount = {};
-  let remainder = amount;
-  let i = 0;
-
-  while (remainder >= lowestDenomination) {
-    if (remainder >= sortedDenominations[i]) {
-      billsCount[sortedDenominations[i]] = Math.floor(
-        remainder / sortedDenominations[i]
-      );
-      remainder = remainder % sortedDenominations[i];
-    }
-
-    i++;
-  }
-
-  return billsCount;
-}
-
-// TODO: Debería mover esta función a otro archivo?
-function updateBillCount(amount, bills) {
-  const updatedBills = [...bills];
-
-  const checkedDenominations = updatedBills
-    .filter(({ checked }) => checked)
-    .map(({ denomination }) => denomination);
-
-  const billCount = getBillCount(amount, checkedDenominations);
-
-  updatedBills.forEach((bill) => {
-    if (!billCount[bill.denomination]) {
-      bill.count = 0;
-    } else {
-      bill.count = billCount[bill.denomination];
-    }
-  });
-
-  return updatedBills;
-}
+import updateBillCount from "./updateBillCount";
 
 function App() {
-  const [amount, setAmount] = useState(100000);
+  const [amount, setAmount] = useState(3790);
   const [bills, setBills] = useState([
-    { checked: true, denomination: 1000, count: 100 },
-    { checked: true, denomination: 500, count: 0 },
-    { checked: true, denomination: 200, count: 0 },
+    { checked: true, denomination: 1000, count: 3 },
+    { checked: true, denomination: 500, count: 1 },
+    { checked: true, denomination: 200, count: 1 },
     { checked: true, denomination: 100, count: 0 },
-    { checked: true, denomination: 50, count: 0 },
-    { checked: true, denomination: 20, count: 0 },
+    { checked: true, denomination: 50, count: 1 },
+    { checked: true, denomination: 20, count: 2 },
     { checked: true, denomination: 10, count: 0 },
   ]);
 
   function handleAmountChange(event, amount) {
-    const value = amount ? amount : parseInt(event.target.value);
+    const value = amount ?? parseInt(event.target.value);
 
     if (Number.isNaN(value)) return setAmount("");
 
